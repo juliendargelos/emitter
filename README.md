@@ -1,5 +1,8 @@
 # Emitter
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b5142f6b123a554621f5/maintainability)](https://codeclimate.com/github/juliendargelos/emitter/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b5142f6b123a554621f5/test_coverage)](https://codeclimate.com/github/juliendargelos/emitter/test_coverage)
+
 Event emitter for javascript.
 
 - [Getting started](https://juliendargelos.github.io/emitter/tutorial-getting-started)

@@ -65,13 +65,13 @@ class Emitter {
    */
   static listener(options, listener = null) {
     if(options === null || typeof options !== 'object') {
-      options = {useCapture: !!options}
+      options = {capture: !!options}
     }
 
     const object = {
       once: options.once || false,
       passive: options.passive || false,
-      useCapture: options.useCapture || false,
+      capture: options.capture || false,
     }
 
     if(listener) object.subject = listener
@@ -90,7 +90,7 @@ class Emitter {
       .trim()
       .replace(/\s+/, ' ')
       .split(' ')
-      .filter((type, index, types) => types.indexOf(type) === index)
+      .filter((type, index, types) => type &amp;&amp; types.indexOf(type) === index)
   }
 
   /**
@@ -150,8 +150,8 @@ class Emitter {
     if(!(type in this.listeners)) return
 
     listener = this.constructor.listener(options, listener)
-    const index = this.listeners[type].findIndex(({subject, useCapture}) => {
-      return subject === listener.subject &amp;&amp; useCapture === listener.useCapture
+    const index = this.listeners[type].findIndex(({subject, capture}) => {
+      return subject === listener.subject &amp;&amp; capture === listener.capture
     })
 
     if(index !== -1) this.listeners[type].splice(index, 1)
@@ -166,7 +166,7 @@ class Emitter {
     if(event.type in this.listeners) {
       const once = []
 
-      this.listeners[event.type].some((once, listener) => {
+      this.listeners[event.type].some(listener => {
         if(listener.once) once.push(listener)
         if(listener.subject.handleEvent) listener.subject.handleEvent(event)
         else listener.subject.call(this, event)
@@ -311,7 +311,7 @@ class Emitter {
       const listener = this.constructor.listener(options)
 
       this.constructor.types(type).forEach(type => {
-        if(type in listeners &amp;&amp; listeners[type].useCapture === listener.useCapture) {
+        if(type in listeners &amp;&amp; listeners[type].capture === listener.capture) {
           target.removeEventListener(type, this.delegate, options)
           delete listeners[type]
         }
