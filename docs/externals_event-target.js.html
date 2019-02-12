@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>externals/event-target.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-getting-started.html">Getting started</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Emitter.html">Emitter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#.mix">mix</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#addEventListener">addEventListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#dispatchEvent">dispatchEvent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#emit">emit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#mix">mix</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#off">off</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#on">on</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#once">once</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#removeEventListener">removeEventListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#sync">sync</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Emitter.html#unsync">unsync</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Event.html">Event</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Event.html#preventDefault">preventDefault</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Event.html#stopImmediatePropagation">stopImmediatePropagation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Event.html#stopPropagation">stopPropagation</a></span></li><li class="nav-heading">Externals</li><li class="nav-heading"><span class="nav-item-type type-external">E</span><span class="nav-item-name"><a href="external-Event.html">Event</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-Event.html#constructor">constructor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-Event.html#preventDefault">preventDefault</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-Event.html#stopImmediatePropagation">stopImmediatePropagation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-Event.html#stopPropagation">stopPropagation</a></span></li><li class="nav-heading"><span class="nav-item-type type-external">E</span><span class="nav-item-name"><a href="external-EventListener.html">EventListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-EventListener.html#handleEvent">handleEvent</a></span></li><li class="nav-heading"><span class="nav-item-type type-external">E</span><span class="nav-item-name"><a href="external-EventTarget.html">EventTarget</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-EventTarget.html#addEventListener">addEventListener</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-EventTarget.html#constructor">constructor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-EventTarget.html#dispatchEvent">dispatchEvent</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="external-EventTarget.html#removeEventListener">removeEventListener</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">externals/event-target.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Interface implemented by objects that can receive events and may have listeners for them.
+ * @external EventTarget
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget EventTarget on MDN}
+ */
+
+/**
+ * @function external:EventTarget#constructor
+ * @return {external:EventTarget}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/EventTarget EventTarget constructor on MDN}
+ */
+
+/**
+ * Sets up a function that will be called whenever the specified event is delivered to the target
+ * @function external:EventTarget#addEventListener
+ * @param {string} type A case-sensitive string representing the event type to listen for.
+ * @param {EventListener|function} listener The object which receives a notification (an object that implements the {@link external:Event} interface) when an event of the specified type occurs.
+ * @param {object|boolean} [options|useCapture=false]
+ * - `options`: An options object that specifies characteristics about the event listener.
+ * - `useCapture`: A boolean indicating whether events of this type will be dispatched to the registered `listener` before being dispatched to any {@link external:EventTarget} beneath it in the DOM tree. Events that are bubbling upward through the tree will not trigger a listener designated to use capture. Event bubbling and capturing are two ways of propagating events which occur in an element that is nested within another element, when both elements have registered a handle for that event. The event propagation mode determines the order in which elements receive the event.
+ * @param {boolean} [options.capture=false] A boolean indicating that events of this type will be dispatched to the registered `listener` before being dispatched to any {@link external:EventTarget} beneath it in the DOM tree.
+ * @param {boolean} [options.once=false] A boolean indicating that the `listener` should be invoked at most once after being added. If `true`, the listener would be automatically removed when invoked.
+ * @param {boolean} [options.passive=false] A boolean which, if `true`, indicates that the function specified by `listener` will never call {@link external:Event#preventDefault}.
+ * @return {undefined}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener EventTarget#addEventListener on MDN}
+ */
+
+/**
+ * Removes from the {@link external:EventTarget} an event listener previously registered with {@link EventTarget#addEventListener}.
+ * @function external:EventTarget#removeEventListener
+ * @param {string} type
+ * @param {EventListener|function} listener
+ * @param {object|boolean} [options|useCapture=false]
+ * - `options`: An options object that specifies characteristics about the event listener.
+ * - `useCapture`: Specifies whether the `listener` to be removed is registered as a capturing listener or not. If a listener is registered twice, one with capture and one without, remove each one separately. Removal of a capturing listener does not affect a non-capturing version of the same listener, and vice versa.
+ * @param {boolean} [options.capture=false] A boolean that indicates that events of this type will be dispatched to the registered `listener` before being dispatched to any {@link external:EventTarget} beneath it in the DOM tree.
+ * @return {undefined}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener EventTarget#removeEventListener on MDN}
+ */
+
+/**
+ * Dispatches an {@link external:Event} at the specified {@link external:EventTarget}, (synchronously) invoking the affected listeners in the appropriate order.
+ * @function external:EventTarget#dispatchEvent
+ * @param {external:Event} event The Event object to be dispatched.
+ * @return {boolean}
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener EventTarget#removeEventListener on MDN}
+ */
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
